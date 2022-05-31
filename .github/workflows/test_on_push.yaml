@@ -21,6 +21,8 @@ jobs:
         with:
           python-version: '3.9.12'
           architecture: 'x64'
+      - name: Install cython
+        run: pip install cython==0.29.24
       - name: Install Package
         # Устанавливаем зависимости
         run: python setup.py install

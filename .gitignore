@@ -1,1 +1,6 @@
 **.vscode
+**.ipynb_checkpoints
+**.ipynb
+/build
+**.egg-info
+/dist

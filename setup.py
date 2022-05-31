@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="ab_tools",
+    name="ci_test",
     version="0.1.0",
     description="A/B tools",
     packages=find_packages(),

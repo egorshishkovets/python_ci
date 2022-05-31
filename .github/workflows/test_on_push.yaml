@@ -19,8 +19,8 @@ jobs:
       # Устанавливаем python нужной версии
       - uses: actions/setup-python@v1
         with:
-          python-version: '3.9.7'
-          architecture: 'x32'
+          python-version: '3.9.12'
+          architecture: 'x64'
       - name: Install Package
         # Устанавливаем зависимости
         run: python setup.py install

@@ -1,0 +1,29 @@
+name: Run tests on any Push event
+# Запуск при любом push евенте в любой ветке, за исключением релизных тэгов.
+# Они будт тестироваться перед сборкой
+on:
+  push:
+    tags:
+      - '!refs/tags/*'
+    branches:
+      - '*'
+env:
+  DEVOPS_DIR: notebook
+
+jobs:
+  run_tests:
+    runs-on: [ubuntu-latest]
+    steps:
+      # Чекаутим код
+      - uses: actions/checkout@master
+      # Устанавливаем python нужной версии
+      - uses: actions/setup-python@v1
+        with:
+          python-version: '3.9.7'
+          architecture: 'x64'
+      - name: Install Package
+        # Устанавливаем зависимости
+        run: python setup.py install
+      - name: Hello World
+        run: python ${{ env.DEVOPS_DIR }}/pipe.py
+        shell: sh

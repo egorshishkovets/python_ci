@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v1
         with:
           python-version: '3.9.7'
-          #architecture: 'x64'
+          architecture: 'x32'
       - name: Install Package
         # Устанавливаем зависимости
         run: python setup.py install
